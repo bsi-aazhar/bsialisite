@@ -1,0 +1,629 @@
+{
+    "title": "Request to Resign from Membership (CPA New Brunswick)",
+    "type": "form",
+    "display": "form",
+    "components": [
+        {
+            "title": "Application Base",
+            "collapsible": false,
+            "key": "panel",
+            "properties": {
+                "disableTranslation": "true"
+            },
+            "customConditional": "show = false;",
+            "type": "panel",
+            "label": "Panel",
+            "input": false,
+            "tableView": false,
+            "components": [
+                {
+                    "label": "Columns",
+                    "input": false,
+                    "tableView": false,
+                    "key": "panelColumns",
+                    "columns": [
+                        {
+                            "components": [
+                                {
+                                    "input": true,
+                                    "tableView": true,
+                                    "label": "Application Status",
+                                    "key": "applicationStatus",
+                                    "defaultValue": "In Progress",
+                                    "clearOnHide": false,
+                                    "type": "textfield",
+                                    "properties": {
+                                        "tableName": "BSIFORMS_APPLICATIONS",
+                                        "fieldName": "APPLICATION_STATUS",
+                                        "syncImmediately": "true"
+                                    },
+                                    "lockKey": true
+                                },
+                                {
+                                    "input": true,
+                                    "tableView": true,
+                                    "label": "Form Submission ID",
+                                    "key": "formSubmissionId",
+                                    "clearOnHide": false,
+                                    "type": "textfield",
+                                    "properties": {
+                                        "tableName": "BSIFORMS_APPLICATIONS",
+                                        "fieldName": "FormSubmissionId",
+                                        "syncImmediately": "true",
+                                        "useSubmissionId": "Current"
+                                    },
+                                    "lockKey": true
+                                },
+                                {
+                                    "input": true,
+                                    "tableView": true,
+                                    "label": "isCoreForm",
+                                    "key": "isCoreForm",
+                                    "defaultValue": "true",
+                                    "clearOnHide": false,
+                                    "type": "textfield",
+                                    "lockKey": true
+                                }
+                            ],
+                            "width": 4,
+                            "offset": 0,
+                            "push": 0,
+                            "pull": 0,
+                            "size": "md",
+                            "currentWidth": 4
+                        },
+                        {
+                            "components": [
+                                {
+                                    "label": "Application Type",
+                                    "tableView": true,
+                                    "defaultValue": "MembershipResignation",
+                                    "clearOnHide": false,
+                                    "key": "applicationType",
+                                    "properties": {
+                                        "tableName": "BSIFORMS_APPLICATIONS",
+                                        "fieldName": "APPLICATION_TYPE",
+                                        "syncImmediately": "true"
+                                    },
+                                    "type": "textfield",
+                                    "input": true,
+                                    "lockKey": true
+                                },
+                                {
+                                    "label": "Application Category",
+                                    "tableView": true,
+                                    "defaultValue": "CPA NB",
+                                    "clearOnHide": false,
+                                    "key": "applicationCategory",
+                                    "properties": {
+                                        "tableName": "BSIFORMS_APPLICATIONS",
+                                        "fieldName": "APPLICATION_CATEGORY",
+                                        "syncImmediately": "true"
+                                    },
+                                    "type": "textfield",
+                                    "input": true,
+                                    "lockKey": true
+                                }
+                            ],
+                            "width": 4,
+                            "offset": 0,
+                            "push": 0,
+                            "pull": 0,
+                            "size": "md",
+                            "currentWidth": 4
+                        },
+                        {
+                            "components": [
+                                {
+                                    "label": "Application Create Date",
+                                    "tableView": true,
+                                    "datePicker": {
+                                        "disableWeekends": false,
+                                        "disableWeekdays": false
+                                    },
+                                    "clearOnHide": false,
+                                    "customDefaultValue": "value = moment.tz(\"America/Toronto\").format('YYYY-MM-DD HH:mm:ss');",
+                                    "enableMinDateInput": false,
+                                    "enableMaxDateInput": false,
+                                    "key": "AppCreateDate",
+                                    "properties": {
+                                        "tableName": "BSIFORMS_APPLICATIONS",
+                                        "fieldName": "APP_CREATE_DT",
+                                        "syncimmediately": "true",
+                                        "ignoreTimeZoneOffset": "true"
+                                    },
+                                    "type": "datetime",
+                                    "input": true,
+                                    "lockKey": true,
+                                    "widget": {
+                                        "type": "calendar",
+                                        "displayInTimezone": "viewer",
+                                        "locale": "en",
+                                        "useLocaleSettings": false,
+                                        "allowInput": true,
+                                        "mode": "single",
+                                        "enableTime": true,
+                                        "noCalendar": false,
+                                        "format": "yyyy-MM-dd hh:mm a",
+                                        "hourIncrement": 1,
+                                        "minuteIncrement": 1,
+                                        "time_24hr": false,
+                                        "minDate": null,
+                                        "disableWeekends": false,
+                                        "disableWeekdays": false,
+                                        "maxDate": null
+                                    }
+                                },
+                                {
+                                    "label": "Form Sub ID CPD Activity",
+                                    "tableView": true,
+                                    "key": "formSubIdCpdActivity",
+                                    "properties": {
+                                        "tableName": "CICC_CPD_ACTIVITY",
+                                        "fieldName": "FormSubmissionId",
+                                        "useSubmissionId": "Current",
+                                        "FieldPopulation": "PreferSubmission"
+                                    },
+                                    "type": "textfield",
+                                    "input": true,
+                                    "keyModified": true
+                                }
+                            ],
+                            "width": 4,
+                            "offset": 0,
+                            "push": 0,
+                            "pull": 0,
+                            "size": "md",
+                            "currentWidth": 4
+                        }
+                    ],
+                    "type": "columns",
+                    "hideLabel": true
+                }
+            ],
+            "lockKey": true,
+            "source": "631f7c8bf1fa445ae7afa971",
+            "keyModified": true
+        },
+        {
+            "label": "Application Date",
+            "hidden": true,
+            "disabled": true,
+            "tableView": true,
+            "datePicker": {
+                "disableWeekends": false,
+                "disableWeekdays": false
+            },
+            "clearOnHide": false,
+            "calculateValue": "if (data.applicationStatus == 'In Progress')\n{\nvalue = moment.tz(\"America/Toronto\").format('YYYY-MM-DD HH:mm:ss');\n}\nelse\n{\nvalue = data.applicationDate;\n}",
+            "enableMinDateInput": false,
+            "enableMaxDateInput": false,
+            "key": "applicationDate",
+            "properties": {
+                "tableName": "BSIFORMS_APPLICATIONS",
+                "fieldName": "APPLICATION_DT",
+                "syncImmediately": "true",
+                "ignoreTimeZoneOffset": "true"
+            },
+            "type": "datetime",
+            "input": true,
+            "lockKey": true,
+            "widget": {
+                "type": "calendar",
+                "displayInTimezone": "viewer",
+                "locale": "en",
+                "useLocaleSettings": false,
+                "allowInput": true,
+                "mode": "single",
+                "enableTime": true,
+                "noCalendar": false,
+                "format": "yyyy-MM-dd hh:mm a",
+                "hourIncrement": 1,
+                "minuteIncrement": 1,
+                "time_24hr": false,
+                "minDate": null,
+                "disableWeekends": false,
+                "disableWeekdays": false,
+                "maxDate": null
+            },
+            "keyModified": true
+        },
+        {
+            "title": "Personal Information",
+            "key": "pi_panel",
+            "type": "panel",
+            "input": false,
+            "tableView": false,
+            "components": [
+                {
+                    "label": "Member Name (Family, Given Name)",
+                    "key": "member_name",
+                    "type": "textfield",
+                    "tableView": true,
+                    "input": true
+                },
+                {
+                    "label": "Membership #",
+                    "key": "membership_number",
+                    "type": "textfield",
+                    "tableView": true,
+                    "input": true
+                },
+                {
+                    "label": "E-mail",
+                    "key": "email",
+                    "type": "email",
+                    "tableView": true,
+                    "input": true
+                },
+                {
+                    "label": "Phone Number",
+                    "key": "phone_number",
+                    "type": "phoneNumber",
+                    "tableView": true,
+                    "input": true
+                }
+            ]
+        },
+        {
+            "title": "Resignation",
+            "key": "resignation_panel",
+            "type": "panel",
+            "input": false,
+            "tableView": false,
+            "components": [
+                {
+                    "label": "Please check the applicable statement that relates to your resignation.",
+                    "key": "resignation_statement",
+                    "type": "radio",
+                    "inline": false,
+                    "tableView": false,
+                    "values": [
+                        {
+                            "label": "I wish to resign my membership with CPA New Brunswick and will not be continuing my membership with any other CPA Provincial and Bermudian Body. I have read and understood the information provided regarding the resignation process and the consequences.",
+                            "value": "resign_no_other_body"
+                        },
+                        {
+                            "label": "I am an active member of another CPA Provincial and Bermudian Body and wish to resign from CPA New Brunswick.",
+                            "value": "resign_active_other_body"
+                        }
+                    ],
+                    "input": true
+                },
+                {
+                    "label": "Please indicate the other province",
+                    "key": "other_province",
+                    "type": "textfield",
+                    "input": true,
+                    "tableView": true,
+                    "conditional": {
+                        "show": true,
+                        "when": "resignation_statement",
+                        "eq": "resign_active_other_body"
+                    }
+                },
+                {
+                    "label": "Reason for Resignation",
+                    "key": "reason_for_resignation",
+                    "type": "textarea",
+                    "autoExpand": true,
+                    "input": true,
+                    "tableView": true
+                }
+            ]
+        },
+        {
+            "title": "Membership Certificate",
+            "key": "certificate_panel",
+            "type": "panel",
+            "input": false,
+            "tableView": false,
+            "components": [
+                {
+                    "label": "I will be returning to CPA New Brunswick the following membership certificate(s):",
+                    "key": "certificates_returned",
+                    "type": "checkbox",
+                    "input": false,
+                    "tableView": false,
+                    "customConditional": "show = false;"
+                },
+                {
+                    "label": "Certificates",
+                    "key": "certificates_group",
+                    "type": "container",
+                    "input": true,
+                    "tableView": false,
+                    "components": [
+                        {
+                            "label": "CPA New Brunswick Certificate",
+                            "key": "cert_cpanb",
+                            "type": "checkbox",
+                            "input": true
+                        },
+                        {
+                            "label": "CA Certificate",
+                            "key": "cert_ca",
+                            "type": "checkbox",
+                            "input": true
+                        },
+                        {
+                            "label": "CGA Certificate",
+                            "key": "cert_cga",
+                            "type": "checkbox",
+                            "input": true
+                        },
+                        {
+                            "label": "CMA Certificate",
+                            "key": "cert_cma",
+                            "type": "checkbox",
+                            "input": true
+                        }
+                    ]
+                },
+                {
+                    "label": "If you do not have your original certificate, please check the applicable box below:",
+                    "key": "no_original_label",
+                    "type": "content",
+                    "html": "<div></div>"
+                },
+                {
+                    "label": "My membership certificate was never issued.",
+                    "key": "cert_never_issued",
+                    "type": "checkbox",
+                    "input": true
+                },
+                {
+                    "label": "My membership certificate is destroyed, lost or the location is unknown. I undertake that if my original certificate is ever recovered, I will forward the certificate forthwith to CPA New Brunswick.",
+                    "key": "cert_destroyed_lost_unknown",
+                    "type": "checkbox",
+                    "input": true
+                },
+                {
+                    "label": "Other, please explain",
+                    "key": "cert_other_flag",
+                    "type": "checkbox",
+                    "input": true
+                },
+                {
+                    "label": "Other explanation",
+                    "key": "cert_other_explanation",
+                    "type": "textarea",
+                    "autoExpand": true,
+                    "input": true,
+                    "conditional": {
+                        "show": true,
+                        "when": "cert_other_flag",
+                        "eq": "true"
+                    }
+                }
+            ]
+        },
+        {
+            "title": "Public Accounting / Professional Corporation",
+            "key": "public_practice_panel",
+            "type": "panel",
+            "input": false,
+            "tableView": false,
+            "components": [
+                {
+                    "label": "Are you a CPA New Brunswick public practice permit holder, authorized to provide and sign off on public accounting services?",
+                    "key": "is_public_practice_permit_holder",
+                    "type": "radio",
+                    "inline": true,
+                    "values": [
+                        {
+                            "label": "Yes",
+                            "value": "yes"
+                        },
+                        {
+                            "label": "No",
+                            "value": "no"
+                        }
+                    ],
+                    "input": true
+                },
+                {
+                    "label": "Do you have a CPA New Brunswick professional corporation licence",
+                    "key": "has_professional_corp_licence",
+                    "type": "radio",
+                    "inline": true,
+                    "values": [
+                        {
+                            "label": "Yes",
+                            "value": "yes"
+                        },
+                        {
+                            "label": "No",
+                            "value": "no"
+                        }
+                    ],
+                    "input": true
+                },
+                {
+                    "label": "Do you have a firm/public practice registered with CPA New Brunswick",
+                    "key": "has_firm_registered",
+                    "type": "radio",
+                    "inline": true,
+                    "values": [
+                        {
+                            "label": "Yes",
+                            "value": "yes"
+                        },
+                        {
+                            "label": "No",
+                            "value": "no"
+                        }
+                    ],
+                    "input": true
+                }
+            ]
+        },
+        {
+            "title": "Declaration",
+            "key": "declaration_panel",
+            "type": "panel",
+            "input": false,
+            "tableView": false,
+            "components": [
+                {
+                    "label": "I acknowledge that I am aware that CPA New Brunswick has a readmission policy for former members who have resigned their membership in good standing but have not maintained membership with another CPA Provincial or Bermudian Body. To be readmitted in the future, I am aware that I must reapply for membership and meet the readmission requirements that may be in effect at the time. These may include the submission of a readmission application, payment of applicable fees and meeting professional development requirements.",
+                    "key": "decl_readmission_policy",
+                    "type": "checkbox",
+                    "input": true
+                },
+                {
+                    "label": "I undertake that I cannot use a protected designation in New Brunswick which includes acting as a Chartered Professional Accountant, using the Chartered Professional Accountant designation or legacy designation in any form or holding myself out as a Chartered Professional Accountant.",
+                    "key": "decl_no_designation_use",
+                    "type": "checkbox",
+                    "input": true
+                },
+                {
+                    "label": "I acknowledge that, pursuant to Bylaw 2.04, my membership certificate(s) are the property of CPA New Brunswick. Furthermore, I declare that if a membership certificate was issued to me, it has been returned to CPA New Brunswick, destroyed or its location is unknown to me",
+                    "key": "decl_cert_property",
+                    "type": "checkbox",
+                    "input": true
+                },
+                {
+                    "label": "I declare that the information contained on this form is true and complete.",
+                    "key": "decl_true_complete",
+                    "type": "checkbox",
+                    "input": true
+                },
+                {
+                    "label": "Signature",
+                    "key": "member_signature",
+                    "type": "signature",
+                    "width": "100%",
+                    "height": "150px",
+                    "input": true,
+                    "tableView": false
+                },
+                {
+                    "label": "Date",
+                    "key": "member_signature_date",
+                    "type": "datetime",
+                    "input": true,
+                    "enableTime": false,
+                    "tableView": true,
+                    "format": "yyyy-MM-dd",
+                    "widget": {
+                        "type": "calendar",
+                        "displayInTimezone": "viewer",
+                        "locale": "en",
+                        "mode": "single",
+                        "enableTime": false,
+                        "noCalendar": false,
+                        "format": "yyyy-MM-dd",
+                        "time_24hr": true
+                    }
+                }
+            ]
+        },
+        {
+            "title": "For Office Use Only",
+            "key": "office_use_panel",
+            "type": "panel",
+            "input": false,
+            "tableView": false,
+            "components": [
+                {
+                    "label": "Approval",
+                    "key": "office_approval",
+                    "type": "checkbox",
+                    "input": true
+                },
+                {
+                    "label": "Signature 1",
+                    "key": "office_signature1",
+                    "type": "textfield",
+                    "input": true,
+                    "tableView": true
+                },
+                {
+                    "label": "Position",
+                    "key": "office_signature1_position",
+                    "type": "textfield",
+                    "input": true
+                },
+                {
+                    "label": "Date",
+                    "key": "office_signature1_date",
+                    "type": "datetime",
+                    "input": true,
+                    "enableTime": false,
+                    "format": "yyyy-MM-dd",
+                    "widget": {
+                        "type": "calendar",
+                        "displayInTimezone": "viewer",
+                        "mode": "single",
+                        "enableTime": false,
+                        "noCalendar": false,
+                        "format": "yyyy-MM-dd",
+                        "time_24hr": true
+                    }
+                },
+                {
+                    "label": "Signature 2",
+                    "key": "office_signature2",
+                    "type": "textfield",
+                    "input": true
+                },
+                {
+                    "label": "Position",
+                    "key": "office_signature2_position",
+                    "type": "textfield",
+                    "input": true
+                },
+                {
+                    "label": "Date",
+                    "key": "office_signature2_date",
+                    "type": "datetime",
+                    "input": true,
+                    "enableTime": false,
+                    "format": "yyyy-MM-dd",
+                    "widget": {
+                        "type": "calendar",
+                        "displayInTimezone": "viewer",
+                        "mode": "single",
+                        "enableTime": false,
+                        "noCalendar": false,
+                        "format": "yyyy-MM-dd",
+                        "time_24hr": true
+                    }
+                }
+            ]
+        },
+        {
+            "label": "Submit",
+            "showValidations": false,
+            "disableOnInvalid": true,
+            "tableView": false,
+            "key": "submit",
+            "type": "button",
+            "saveOnEnter": false,
+            "input": true
+        },
+        {
+            "label": "Save as Draft",
+            "action": "saveState",
+            "showValidations": false,
+            "theme": "secondary",
+            "tableView": false,
+            "key": "saveAsDraft",
+            "type": "button",
+            "state": "draft",
+            "input": true
+        },
+        {
+            "label": "Cancel",
+            "action": "custom",
+            "showValidations": false,
+            "theme": "secondary",
+            "tableView": false,
+            "key": "cancel",
+            "type": "button",
+            "input": true,
+            "custom": "window.history.back();"
+        }
+    ]
+}
